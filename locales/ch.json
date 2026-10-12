@@ -1,0 +1,14 @@
+{
+  "collection.set_brainiac_ph_exotic.name": "遗忘的科技",
+  "collection.set_brainiac_ph_exotic.desc": "收集十件在塔科夫保存下来的稀有电子设备。",
+  "collection.set_brainiac_ph_exotic.milestone.5": "已保存五件藏品。",
+  "collection.set_brainiac_ph_exotic.milestone.10": "所有奖励永久增加2% GP。",
+  "collection.set_brainiac_ph_military.name": "零号小队遗物",
+  "collection.set_brainiac_ph_military.desc": "收集十件历史野战遗物。",
+  "collection.set_brainiac_ph_military.milestone.5": "已保存五件藏品。",
+  "collection.set_brainiac_ph_military.milestone.10": "所有奖励永久增加2% GP。",
+  "collection.set_brainiac_ph_brainiac.name": "研究员档案",
+  "collection.set_brainiac_ph_brainiac.desc": "收集十件研究仪器和工坊物品。",
+  "collection.set_brainiac_ph_brainiac.milestone.5": "已保存五件藏品。",
+  "collection.set_brainiac_ph_brainiac.milestone.10": "所有奖励永久增加2% GP。"
+}

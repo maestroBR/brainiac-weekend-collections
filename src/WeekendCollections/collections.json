@@ -1,8 +1,8 @@
 [
   {
     "id": "set_brainiac_ph_exotic",
-    "name": "TECNOLOGIA ESQUECIDA",
-    "description": "Reúna dez objetos históricos realistas.",
+    "name": "FORGOTTEN TECHNOLOGY",
+    "description": "Collect ten rare electronics preserved in Tarkov.",
     "gpPerItem": 750,
     "itemIds": [
       "3a173295f974d5e58024eeb6",
@@ -22,21 +22,21 @@
         "gpReward": 3750,
         "perk": "None",
         "perkValue": 0,
-        "description": "Cinco peças preservadas."
+        "description": "Five pieces preserved."
       },
       {
         "required": 10,
         "gpReward": 9750,
         "perk": "GpPercent",
         "perkValue": 2,
-        "description": "+2% GP permanente em todas as recompensas."
+        "description": "Permanent +2% GP bonus on all rewards."
       }
     ]
   },
   {
     "id": "set_brainiac_ph_military",
-    "name": "RELÍQUIAS DO ESQUADRÃO ZERO",
-    "description": "Reúna dez objetos históricos realistas.",
+    "name": "ZERO SQUAD RELICS",
+    "description": "Collect ten historical field relics.",
     "gpPerItem": 750,
     "itemIds": [
       "8cd282a2a35411480f8631ea",
@@ -56,21 +56,21 @@
         "gpReward": 3750,
         "perk": "None",
         "perkValue": 0,
-        "description": "Cinco peças preservadas."
+        "description": "Five pieces preserved."
       },
       {
         "required": 10,
         "gpReward": 9750,
         "perk": "GpPercent",
         "perkValue": 2,
-        "description": "+2% GP permanente em todas as recompensas."
+        "description": "Permanent +2% GP bonus on all rewards."
       }
     ]
   },
   {
     "id": "set_brainiac_ph_brainiac",
-    "name": "ARQUIVO DOS PESQUISADORES",
-    "description": "Reúna dez objetos históricos realistas.",
+    "name": "RESEARCHERS’ ARCHIVE",
+    "description": "Collect ten research instruments and workshop objects.",
     "gpPerItem": 750,
     "itemIds": [
       "c47404dc9d1a578964e67342",
@@ -90,14 +90,14 @@
         "gpReward": 3750,
         "perk": "None",
         "perkValue": 0,
-        "description": "Cinco peças preservadas."
+        "description": "Five pieces preserved."
       },
       {
         "required": 10,
         "gpReward": 9750,
         "perk": "GpPercent",
         "perkValue": 2,
-        "description": "+2% GP permanente em todas as recompensas."
+        "description": "Permanent +2% GP bonus on all rewards."
       }
     ]
   }

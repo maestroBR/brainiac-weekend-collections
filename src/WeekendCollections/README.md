@@ -18,7 +18,9 @@ Close the server and extract the ZIP into your game folder. The files belong in:
 SPT_Runtime/user/mods/Brainiac-WeekendCollections/
 ```
 
-Restart the server and game.
+Restart the server and game. Version 1.1.0 also installs a client plugin under `BepInEx/plugins/Brainiac-WeekendCollections/`; every player needs it to see translated collection text.
+
+Collection names, descriptions and milestone text follow the Weekend interface language: English, German, Russian, Brazilian Portuguese or Simplified Chinese. Other languages fall back to English.
 
 ## Collections and rewards
 

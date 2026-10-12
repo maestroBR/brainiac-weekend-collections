@@ -5,6 +5,7 @@ Requires .NET SDK 10, Python 3 and a local SPT 4.1.6 installation. The addon als
 ```sh
 dotnet build src/WeekendCollections/WeekendCollections.csproj -c Release -p:SptRoot="PATH/SPT_Runtime"
 dotnet run --project tests/CollectionMergeCheck.csproj -p:SptRoot="PATH/SPT_Runtime"
+dotnet build client/Client.csproj -c Release -p:SptRoot="PATH/SPT_Runtime"
 python tools/validate.py
 python tools/package.py
 ```
@@ -24,3 +25,5 @@ For VS Code to resolve references, create `Directory.Build.local.props` in the r
 This file is ignored by Git. Reload the VS Code window after creating it.
 
 SPT and third-party DLLs are local references and are not distributed.
+
+The client targets netstandard2.1 and references BepInEx, Unity, Harmony and Newtonsoft.Json from the local game installation. Override GameRoot when needed. These DLLs are not shipped.
