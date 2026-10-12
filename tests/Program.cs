@@ -1,0 +1,10 @@
+using Brainiac.WeekendCollections;
+using WeekendDrops.Models;
+var original=new CollectionSetDefinition{Id="existing",GpPerItem=123};
+var current=new List<CollectionSetDefinition>{original};
+var additions=new[]{new CollectionSetDefinition{Id="existing",GpPerItem=999},new CollectionSetDefinition{Id="new",GpPerItem=750}};
+if(CollectionMerger.Merge(current,additions)!=1)throw new Exception("Quantidade de conjuntos adicionados incorreta.");
+if(current.Count!=2||!ReferenceEquals(current[0],original)||original.GpPerItem!=123)throw new Exception("Configuração existente foi alterada.");
+if(CollectionMerger.Merge(current,additions)!=0||current.Count!=2)throw new Exception("Reaplicação duplicou coleções.");
+if(CollectionMerger.Merge(current,new[]{new CollectionSetDefinition{Id="third"},new CollectionSetDefinition{Id="third"}})!=1)throw new Exception("IDs duplicados no mesmo lote.");
+Console.WriteLine("Coleções existentes preservadas; reaplicação sem duplicatas; lote repetido tratado.");

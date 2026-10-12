@@ -1,0 +1,104 @@
+[
+  {
+    "id": "set_brainiac_ph_exotic",
+    "name": "TECNOLOGIA ESQUECIDA",
+    "description": "Reúna dez objetos históricos realistas.",
+    "gpPerItem": 750,
+    "itemIds": [
+      "3a173295f974d5e58024eeb6",
+      "a57e44e1d288e798d8262d14",
+      "417f1116059f50724ac4fab1",
+      "1e0952fd2121064651d09a7c",
+      "8d05d62c0959b9f6da36f23c",
+      "be53518ac9bcf6015045af5b",
+      "3c700c476703a30a16faa97b",
+      "ac4704a066d9d2ea1a4997db",
+      "7d923853800a02bbd0a9160e",
+      "81fbedebf85fb2c9ea5520cb"
+    ],
+    "milestones": [
+      {
+        "required": 5,
+        "gpReward": 3750,
+        "perk": "None",
+        "perkValue": 0,
+        "description": "Cinco peças preservadas."
+      },
+      {
+        "required": 10,
+        "gpReward": 9750,
+        "perk": "GpPercent",
+        "perkValue": 2,
+        "description": "+2% GP permanente em todas as recompensas."
+      }
+    ]
+  },
+  {
+    "id": "set_brainiac_ph_military",
+    "name": "RELÍQUIAS DO ESQUADRÃO ZERO",
+    "description": "Reúna dez objetos históricos realistas.",
+    "gpPerItem": 750,
+    "itemIds": [
+      "8cd282a2a35411480f8631ea",
+      "218bddefe50ca51f605ad421",
+      "a65dd8eb1ace34809bde216c",
+      "d8e78f49958bd382f4ddda20",
+      "bcd209863b746f2bf4f8fb89",
+      "ba78dc9bda8ce2115077dfb2",
+      "b95d9d43366dfdd9935af191",
+      "65c5a563614fd41401be9f31",
+      "ab80d47468a26d13765e894b",
+      "070ddb3c868b8e6ef4aa36e3"
+    ],
+    "milestones": [
+      {
+        "required": 5,
+        "gpReward": 3750,
+        "perk": "None",
+        "perkValue": 0,
+        "description": "Cinco peças preservadas."
+      },
+      {
+        "required": 10,
+        "gpReward": 9750,
+        "perk": "GpPercent",
+        "perkValue": 2,
+        "description": "+2% GP permanente em todas as recompensas."
+      }
+    ]
+  },
+  {
+    "id": "set_brainiac_ph_brainiac",
+    "name": "ARQUIVO DOS PESQUISADORES",
+    "description": "Reúna dez objetos históricos realistas.",
+    "gpPerItem": 750,
+    "itemIds": [
+      "c47404dc9d1a578964e67342",
+      "30e8c9c878f1b3ea859f3a55",
+      "0c1650f7b3a30fb8aa70b79b",
+      "933b09b16011d16909a04e41",
+      "a5466d4a77403fa3ce52e68e",
+      "a1341311966b9684c80e3e66",
+      "65c417d966f622f9bc9e2246",
+      "4e2bb71fc766a312548eb8ae",
+      "f7d14bac70ed7d9efb58f65b",
+      "c29a2d0e3e8deba8a8141531"
+    ],
+    "milestones": [
+      {
+        "required": 5,
+        "gpReward": 3750,
+        "perk": "None",
+        "perkValue": 0,
+        "description": "Cinco peças preservadas."
+      },
+      {
+        "required": 10,
+        "gpReward": 9750,
+        "perk": "GpPercent",
+        "perkValue": 2,
+        "description": "+2% GP permanente em todas as recompensas."
+      }
+    ]
+  }
+]

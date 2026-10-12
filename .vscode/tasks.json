@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compilar addon",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "src/WeekendCollections/WeekendCollections.csproj",
+        "-c",
+        "Release",
+        "-p:SptRoot=${input:sptRoot}"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Validar cole\u00e7\u00f5es",
+      "type": "process",
+      "command": "python",
+      "args": [
+        "tools/validate.py"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Gerar pacotes",
+      "type": "process",
+      "command": "python",
+      "args": [
+        "tools/package.py"
+      ],
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "sptRoot",
+      "type": "promptString",
+      "description": "Caminho para SPT_Runtime"
+    }
+  ]
+}

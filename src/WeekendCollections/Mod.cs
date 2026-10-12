@@ -1,0 +1,55 @@
+using System.Reflection;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using HarmonyLib;
+using SPTarkov.Common.Models.Logging;
+using SPTarkov.DI.Annotations;
+using SPTarkov.Server.Core.DI;
+using SPTarkov.Server.Core.Models.Common;
+using SPTarkov.Server.Core.Models.Spt.Tables;
+using WeekendDrops.Models;
+using WeekendDrops.Services;
+namespace Brainiac.WeekendCollections;
+
+[Injectable(TypePriority=OnLoadOrder.PostLoad+1000)]
+public sealed class Mod(CollectionService collection,TemplateTable templates,ISptLogger<Mod> logger) : IOnLoad
+{
+ private static Mod? active;
+ private List<CollectionSetDefinition> definitions=[];
+ private static readonly JsonSerializerOptions JsonOptions=new()
+ {
+  PropertyNameCaseInsensitive=true,Converters={new JsonStringEnumConverter()}
+ };
+ private static readonly FieldInfo ConfigField=AccessTools.Field(typeof(CollectionService),"_config")
+  ?? throw new MissingFieldException("WeekendDrops CollectionService._config");
+
+ public Task OnLoadAsync(CancellationToken cancellationToken)
+ {
+  cancellationToken.ThrowIfCancellationRequested();
+  string root=Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!;
+  definitions=JsonSerializer.Deserialize<List<CollectionSetDefinition>>(File.ReadAllText(Path.Combine(root,"collections.json")),JsonOptions)
+   ?? throw new InvalidDataException("collections.json está vazio.");
+  if(definitions.Count!=3||definitions.Select(s=>s.Id).Distinct().Count()!=3)
+   throw new InvalidDataException("O addon precisa conter três coleções com IDs distintos.");
+  foreach(var set in definitions)
+  {
+   if(set.ItemIds.Count!=10||set.ItemIds.Distinct().Count()!=10||set.Milestones.Any(m=>m.Required<=0||m.Required>10))
+    throw new InvalidDataException("Coleção inválida: "+set.Id);
+   if(set.ItemIds.Any(id=>!templates.Items.ContainsKey(new MongoId(id))))
+    throw new InvalidDataException("Itens Brainiac não carregados. Confira a versão do mod principal.");
+  }
+  active=this;
+  var harmony=new Harmony("project.brainiac.weekendcollections");
+  harmony.Patch(AccessTools.Method(typeof(CollectionService),nameof(CollectionService.LoadConfig),new[]{typeof(string)}),
+   postfix:new HarmonyMethod(typeof(Mod),nameof(AfterReload)));
+  Merge(collection);
+  return Task.CompletedTask;
+ }
+ private static void AfterReload(CollectionService __instance)=>active?.Merge(__instance);
+ private void Merge(CollectionService service)
+ {
+  var config=(CollectionConfig)ConfigField.GetValue(service)!;
+  int count=CollectionMerger.Merge(config.Sets,definitions);
+  logger.Info($"[Brainiac Weekend] {count} coleções adicionadas; conjuntos existentes e arquivo do Weekend preservados.");
+ }
+}
