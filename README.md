@@ -4,7 +4,9 @@ Addon opcional para o WeekendDrops: adiciona três coleções com os 30 itens do
 
 ## Requisitos
 
-SPT 4.1.6, Brainiac Collectibles 1.2.0 e WeekendDrops 1.0.7. O mod de itens é distribuído em um projeto separado: **brainiac-collectibles**.
+SPT 4.1.6, Brainiac Collectibles 1.2.0 e WeekendDrops 1.0.7. O mod de itens é distribuído em um projeto separado: [Brainiac Collectibles](https://github.com/maestroBR/brainiac-collectibles).
+
+[Baixar a versão mais recente](https://github.com/maestroBR/brainiac-weekend-collections/releases/latest).
 
 ## Instalação
 
