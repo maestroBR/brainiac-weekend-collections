@@ -1,38 +1,38 @@
 # Brainiac Weekend Collections
 
-Adiciona ao Weekend três coleções com os 30 itens do [Brainiac Collectibles](https://github.com/maestroBR/brainiac-collectibles).
+Adds three collections to Weekend using the 30 items from [Brainiac Collectibles](https://github.com/maestroBR/brainiac-collectibles).
 
 [Download](https://github.com/maestroBR/brainiac-weekend-collections/releases/latest)
 
-## Requisitos
+## Requirements
 
 - SPT 4.1.6
-- Brainiac Collectibles 1.2.0 ou superior, da série 1.x
+- Brainiac Collectibles 1.x, starting with 1.2.0
 - WeekendDrops 1.0.7
 
-## Instalação
+## Installation
 
-Com o servidor fechado, extraia o ZIP na pasta do jogo. Os arquivos ficam em:
+Close the server and extract the ZIP into your game folder. The files belong in:
 
 ```text
 SPT_Runtime/user/mods/Brainiac-WeekendCollections/
 ```
 
-Reinicie o servidor e o jogo.
+Restart the server and game.
 
-## Coleções e recompensas
+## Collections and rewards
 
-Tecnologia Esquecida, Relíquias de Campo e Arquivo Brainiac, com dez itens cada.
+Forgotten Technology, Field Relics and Brainiac Archive, with ten items each.
 
-- 750 GP por item entregue.
-- 3.750 GP ao entregar cinco itens.
-- 9.750 GP e +2% permanente de GP ao completar uma coleção.
-- As três coleções completas somam +6% de GP.
+- 750 GP per donated item.
+- 3,750 GP for donating five items.
+- 9,750 GP and a permanent +2% GP bonus for completing a collection.
+- Completing all three collections gives a total +6% GP bonus.
 
-Coleções já configuradas no Weekend mantêm suas recompensas. O addon não substitui o arquivo de configuração.
+Collections already configured in Weekend keep their existing rewards. The addon does not overwrite the configuration file.
 
-Pode ser removido sem desinstalar os itens. O progresso salvo pelo Weekend permanece.
+You can remove the addon without uninstalling the items. Progress saved by Weekend is preserved.
 
-Código sob MIT. Project Brainiac.
+Code licensed under MIT. Project Brainiac.
 
-[Compilar o addon](docs/DEVELOPMENT.md) · [Compatibilidade](docs/COMPATIBILITY.md)
+[Build instructions](docs/DEVELOPMENT.md) · [Compatibility](docs/COMPATIBILITY.md)

@@ -1,15 +1,13 @@
-# Compatibilidade
+# Compatibility
 
-| Verificação | Estado |
+Targets SPT 4.1.6, WeekendDrops 1.0.7 and Brainiac Collectibles >=1.2.0 <2.0.0.
+
+| Check | Status |
 | --- | --- |
-| Build do mod principal no SPT 4.1.6 | Passou |
-| Build do addon contra WeekendDrops 1.0.7 instalado | Passou |
-| IDs e cobertura dos 30 bundles | Conferidos |
-| 30 modelos no Unity Editor 2022.3.43f1 | Validação anterior do projeto |
-| Startup dos dois pacotes separados | Pendente |
-| Entrega e resgate no Weekend | Pendente |
-| Host/cliente Fika | Pendente |
+| Build against WeekendDrops 1.0.7 | Passed |
+| Collection data | Validated |
+| Existing collection preservation and duplicate prevention | Passed in isolation |
+| Standalone package startup | Pending |
+| Donations, rewards and Fika gameplay | Pending |
 
-O addon depende de `CollectionService.LoadConfig` e do campo `_config` do Weekend. Uma mudança nessa API exige nova validação. As dependências de versão evitam tratá-lo como compatível automaticamente com futuras versões do Weekend.
-
-Não distribui as DLLs de SPT, Weekend, Harmony ou Unity. O cliente precisa carregar os bundles corretos; uma compilação bem-sucedida no servidor não comprova renderização, sincronização ou funcionamento em raid.
+The integration uses CollectionService.LoadConfig and Weekend's _config field. Changes to that API require renewed validation. SPT, Weekend and Harmony DLLs are not included.

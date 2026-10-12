@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Compilar addon",
+      "label": "Build addon",
       "type": "process",
       "command": "dotnet",
       "args": [
@@ -15,7 +15,7 @@
       "problemMatcher": "$msCompile"
     },
     {
-      "label": "Validar cole\u00e7\u00f5es",
+      "label": "Validate collections",
       "type": "process",
       "command": "python",
       "args": [
@@ -24,7 +24,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Gerar pacotes",
+      "label": "Package release",
       "type": "process",
       "command": "python",
       "args": [
@@ -37,7 +37,7 @@
     {
       "id": "sptRoot",
       "type": "promptString",
-      "description": "Caminho para SPT_Runtime"
+      "description": "Path to SPT_Runtime"
     }
   ]
 }

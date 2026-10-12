@@ -1,17 +1,17 @@
 ---
-name: Relatar um problema
-about: Falha de carregamento, item, bundle ou coleção
+name: Bug report
+about: Loading, item, bundle or collection issue
 ---
 
-## O que aconteceu
+## What happened
 
-## Como reproduzir
+## Steps to reproduce
 
-## Versões
+## Versions
 - SPT:
 - Brainiac Collectibles:
-- WeekendDrops / addon, se usados:
-- Fika e papel host/cliente, se usado:
+- WeekendDrops / addon, if used:
+- Fika version and host/client role, if used:
 
 ## Log
-Cole somente as linhas relevantes. Remova tokens, senhas e dados pessoais. Informe se é log do servidor ou do cliente.
+Include the relevant lines and specify whether this is a server or client log. Remove passwords, tokens and personal information.

@@ -1,8 +1,8 @@
-# Histórico
+# Changelog
 
-## Addon Weekend 1.0.0
+## 1.0.0
 
-- Três coleções de dez itens.
-- Integração em memória, sem substituir a configuração do Weekend.
-- IDs existentes preservados e recarga sem duplicação.
-- Requisitos separados do pacote principal.
+- Three collections of ten items.
+- In-memory integration without replacing Weekend's configuration.
+- Existing collections preserved and duplicate-free reloads.
+- Distributed separately from the item mod.
