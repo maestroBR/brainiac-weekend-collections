@@ -1,46 +1,38 @@
 # Brainiac Weekend Collections
 
-Addon opcional para o WeekendDrops: adiciona três coleções com os 30 itens do Brainiac Collectibles.
+Adiciona ao Weekend três coleções com os 30 itens do [Brainiac Collectibles](https://github.com/maestroBR/brainiac-collectibles).
+
+[Download](https://github.com/maestroBR/brainiac-weekend-collections/releases/latest)
 
 ## Requisitos
 
-SPT 4.1.6, Brainiac Collectibles 1.2.0 e WeekendDrops 1.0.7. O mod de itens é distribuído em um projeto separado: [Brainiac Collectibles](https://github.com/maestroBR/brainiac-collectibles).
-
-[Baixar a versão mais recente](https://github.com/maestroBR/brainiac-weekend-collections/releases/latest).
+- SPT 4.1.6
+- Brainiac Collectibles 1.2.0 ou superior, da série 1.x
+- WeekendDrops 1.0.7
 
 ## Instalação
 
-Feche o servidor e extraia o ZIP na pasta do SPT. A pasta resultante é `SPT_Runtime/user/mods/Brainiac-WeekendCollections/`. Reinicie servidor e cliente.
+Com o servidor fechado, extraia o ZIP na pasta do jogo. Os arquivos ficam em:
 
-O addon acrescenta coleções em memória, preserva configurações existentes e evita duplicatas nas recargas. Não inclui modelos, texturas ou bundles.
+```text
+SPT_Runtime/user/mods/Brainiac-WeekendCollections/
+```
+
+Reinicie o servidor e o jogo.
 
 ## Coleções e recompensas
 
-Tecnologia Esquecida, Relíquias de Campo e Arquivo Brainiac: dez itens por coleção. Cada entrega concede 750 GP; os marcos de cinco e dez itens concedem 3750 e 9750 GP. Cada coleção concluída concede +2% permanente de GP, totalizando +6%. O Weekend controla cálculo e persistência. Coleções já existentes mantêm suas recompensas configuradas.
+Tecnologia Esquecida, Relíquias de Campo e Arquivo Brainiac, com dez itens cada.
 
-## Desenvolvimento
+- 750 GP por item entregue.
+- 3.750 GP ao entregar cinco itens.
+- 9.750 GP e +2% permanente de GP ao completar uma coleção.
+- As três coleções completas somam +6% de GP.
 
-.NET SDK 10 e Python 3. As DLLs do SPT e Weekend são referências locais e não são distribuídas.
+Coleções já configuradas no Weekend mantêm suas recompensas. O addon não substitui o arquivo de configuração.
 
-```sh
-dotnet build src/WeekendCollections/WeekendCollections.csproj -c Release -p:SptRoot="CAMINHO/SPT_Runtime"
-dotnet run --project tests/CollectionMergeCheck.csproj -p:SptRoot="CAMINHO/SPT_Runtime"
-python tools/validate.py
-python tools/package.py
-```
+Pode ser removido sem desinstalar os itens. O progresso salvo pelo Weekend permanece.
 
-A compilação e a mesclagem isolada foram verificadas. Startup, entregas e gameplay Fika da distribuição separada permanecem pendentes. Retirar o addon remove suas coleções da interface após reinício, mantendo o progresso salvo pelo Weekend.
+Código sob MIT. Project Brainiac.
 
-GUID: `project.brainiac.weekendcollections`. Código sob licença MIT, Project Brainiac.
-
-Para o VS Code resolver as referências sem argumentos de terminal, crie `Directory.Build.local.props` na raiz:
-
-```xml
-<Project>
-  <PropertyGroup>
-    <SptRoot>CAMINHO/SPT_Runtime</SptRoot>
-  </PropertyGroup>
-</Project>
-```
-
-Esse arquivo é ignorado pelo Git e guarda apenas sua configuração local. Depois recarregue a janela do VS Code.
+[Compilar o addon](docs/DEVELOPMENT.md) · [Compatibilidade](docs/COMPATIBILITY.md)

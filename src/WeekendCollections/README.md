@@ -1,9 +1,38 @@
-# Coleções Brainiac para WeekendDrops
+# Brainiac Weekend Collections
 
-Addon opcional para usar os 30 itens do Brainiac Collectibles em três coleções do Weekend. Requer SPT 4.1.6, Brainiac Collectibles 1.2.0 e WeekendDrops 1.0.7.
+Adiciona ao Weekend três coleções com os 30 itens do [Brainiac Collectibles](https://github.com/maestroBR/brainiac-collectibles).
 
-Extraia o ZIP na pasta do SPT. Ele cria apenas `SPT_Runtime/user/mods/Brainiac-WeekendCollections`.
+[Download](https://github.com/maestroBR/brainiac-weekend-collections/releases/latest)
 
-O addon lê `collections.json` da própria pasta e acrescenta conjuntos ao serviço de coleções em memória. O `collection.json` do Weekend não é sobrescrito. IDs existentes são mantidos; recarregar a configuração do Weekend reaplica os conjuntos sem duplicá-los.
+## Requisitos
 
-O mod principal continua responsável pelos itens, loot e bundles. Este pacote não contém os modelos e não instala o WeekendDrops. Para remover, retire a pasta do addon com o servidor fechado e reinicie.
+- SPT 4.1.6
+- Brainiac Collectibles 1.2.0 ou superior, da série 1.x
+- WeekendDrops 1.0.7
+
+## Instalação
+
+Com o servidor fechado, extraia o ZIP na pasta do jogo. Os arquivos ficam em:
+
+```text
+SPT_Runtime/user/mods/Brainiac-WeekendCollections/
+```
+
+Reinicie o servidor e o jogo.
+
+## Coleções e recompensas
+
+Tecnologia Esquecida, Relíquias de Campo e Arquivo Brainiac, com dez itens cada.
+
+- 750 GP por item entregue.
+- 3.750 GP ao entregar cinco itens.
+- 9.750 GP e +2% permanente de GP ao completar uma coleção.
+- As três coleções completas somam +6% de GP.
+
+Coleções já configuradas no Weekend mantêm suas recompensas. O addon não substitui o arquivo de configuração.
+
+Pode ser removido sem desinstalar os itens. O progresso salvo pelo Weekend permanece.
+
+Código sob MIT. Project Brainiac.
+
+[Compilar o addon](docs/DEVELOPMENT.md) · [Compatibilidade](docs/COMPATIBILITY.md)
