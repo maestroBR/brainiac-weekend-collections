@@ -35,4 +35,3 @@ You can remove the addon without uninstalling the items. Progress saved by Weeke
 
 Code licensed under MIT. Project Brainiac.
 
-[Build instructions](docs/DEVELOPMENT.md) · [Compatibility](docs/COMPATIBILITY.md)
