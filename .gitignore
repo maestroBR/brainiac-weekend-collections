@@ -13,3 +13,5 @@ dist/
 
 __pycache__/
 *.py[cod]
+
+Directory.Build.local.props

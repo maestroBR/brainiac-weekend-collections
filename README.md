@@ -30,3 +30,15 @@ python tools/package.py
 A compilação e a mesclagem isolada foram verificadas. Startup, entregas e gameplay Fika da distribuição separada permanecem pendentes. Retirar o addon remove suas coleções da interface após reinício, mantendo o progresso salvo pelo Weekend.
 
 GUID: `project.brainiac.weekendcollections`. Código sob licença MIT, Project Brainiac.
+
+Para o VS Code resolver as referências sem argumentos de terminal, crie `Directory.Build.local.props` na raiz:
+
+```xml
+<Project>
+  <PropertyGroup>
+    <SptRoot>CAMINHO/SPT_Runtime</SptRoot>
+  </PropertyGroup>
+</Project>
+```
+
+Esse arquivo é ignorado pelo Git e guarda apenas sua configuração local. Depois recarregue a janela do VS Code.
