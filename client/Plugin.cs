@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace Brainiac.WeekendCollections.Client
 {
- [BepInPlugin("project.brainiac.weekendcollections.client", "Brainiac Weekend Collections Languages", "1.1.0")]
+ [BepInPlugin("project.brainiac.weekendcollections.client", "Brainiac Weekend Collections Languages", "1.2.0")]
  [BepInDependency("com.20fpsguy.WeekendDrops")]
  public sealed class Plugin : BaseUnityPlugin
  {

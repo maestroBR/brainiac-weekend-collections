@@ -1,39 +1,34 @@
 # Brainiac Weekend Collections
 
-Adds three collections to Weekend using the 30 items from [Brainiac Collectibles](https://github.com/maestroBR/brainiac-collectibles).
-
-[Download](https://github.com/maestroBR/brainiac-weekend-collections/releases/latest)
+Adds 3 collections with 30 items to WeekendDrops. Completing each collection gives a permanent **+10% GP bonus** on Weekend rewards: **+30%** for completing all sets in this addon.
 
 ## Requirements
 
 - SPT 4.1.6
-- Brainiac Collectibles 1.x, starting with 1.2.0
 - WeekendDrops 1.0.7
+- Brainiac Collectibles 1.x (1.2.0 or newer)
 
 ## Installation
 
-Close the server and extract the ZIP into your game folder. The files belong in:
+Close the server and game, then extract the release ZIP into the game folder. It contains:
 
 ```text
 SPT_Runtime/user/mods/Brainiac-WeekendCollections/
+BepInEx/plugins/Brainiac-WeekendCollections/
 ```
 
-Restart the server and game. Version 1.1.0 also installs a client plugin under `BepInEx/plugins/Brainiac-WeekendCollections/`; every player needs it to see translated collection text.
+Every player needs the client plugin for translated collection text. Restart the server and game. English, German, Russian, Brazilian Portuguese and Simplified Chinese are included.
 
-Collection names, descriptions and milestone text follow the Weekend interface language: English, German, Russian, Brazilian Portuguese or Simplified Chinese. Other languages fall back to English.
+## Collections
 
-## Collections and rewards
+- **FORGOTTEN TECHNOLOGY** — 10 items; 750 GP per donation; 9,750 GP on completion.
+- **ZERO SQUAD RELICS** — 10 items; 750 GP per donation; 9,750 GP on completion.
+- **RESEARCHERS’ ARCHIVE** — 10 items; 750 GP per donation; 9,750 GP on completion.
 
-Forgotten Technology, Field Relics and Brainiac Archive, with ten items each.
+The addon updates only its own completion bonus to 10%; existing donation progress, cash rewards and unrelated collections are preserved. The Weekend configuration file is not overwritten. Bonuses follow Weekend’s normal profile-wipe rules.
 
-- 750 GP per donated item.
-- 3,750 GP for donating five items.
-- 9,750 GP and a permanent +2% GP bonus for completing a collection.
-- Completing all three collections gives a total +6% GP bonus.
+## Removal
 
-Collections already configured in Weekend keep their existing rewards. The addon does not overwrite the configuration file.
+Remove the two addon folders. Keep the required item mod installed while items remain in profiles. Weekend retains its saved collection data.
 
-You can remove the addon without uninstalling the items. Progress saved by Weekend is preserved.
-
-Code licensed under MIT. Project Brainiac.
-
+Code: MIT. Project Brainiac. Item models, textures and WeekendDrops belong to their respective authors and are not included.

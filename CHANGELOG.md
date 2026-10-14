@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0
+
+- Completion bonuses increased from 2% to 10% per collection.
+- Existing collections receive the updated bonus without resetting donations.
+
 ## 1.1.0
 
 - Collection names, descriptions and milestones in five languages.

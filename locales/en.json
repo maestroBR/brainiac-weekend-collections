@@ -2,13 +2,13 @@
   "collection.set_brainiac_ph_exotic.name": "FORGOTTEN TECHNOLOGY",
   "collection.set_brainiac_ph_exotic.desc": "Collect ten rare electronics preserved in Tarkov.",
   "collection.set_brainiac_ph_exotic.milestone.5": "Five pieces preserved.",
-  "collection.set_brainiac_ph_exotic.milestone.10": "Permanent +2% GP bonus on all rewards.",
+  "collection.set_brainiac_ph_exotic.milestone.10": "Permanent +10% GP bonus on all rewards.",
   "collection.set_brainiac_ph_military.name": "ZERO SQUAD RELICS",
   "collection.set_brainiac_ph_military.desc": "Collect ten historical field relics.",
   "collection.set_brainiac_ph_military.milestone.5": "Five pieces preserved.",
-  "collection.set_brainiac_ph_military.milestone.10": "Permanent +2% GP bonus on all rewards.",
+  "collection.set_brainiac_ph_military.milestone.10": "Permanent +10% GP bonus on all rewards.",
   "collection.set_brainiac_ph_brainiac.name": "RESEARCHERS’ ARCHIVE",
   "collection.set_brainiac_ph_brainiac.desc": "Collect ten research instruments and workshop objects.",
   "collection.set_brainiac_ph_brainiac.milestone.5": "Five pieces preserved.",
-  "collection.set_brainiac_ph_brainiac.milestone.10": "Permanent +2% GP bonus on all rewards."
+  "collection.set_brainiac_ph_brainiac.milestone.10": "Permanent +10% GP bonus on all rewards."
 }

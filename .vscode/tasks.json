@@ -2,55 +2,23 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Build addon",
-      "type": "process",
-      "command": "dotnet",
-      "args": [
-        "build",
-        "src/WeekendCollections/WeekendCollections.csproj",
-        "-c",
-        "Release",
-        "-p:SptRoot=${input:sptRoot}"
-      ],
+      "label": "Build addon server",
+      "type": "shell",
+      "command": "dotnet build src/WeekendCollections/WeekendCollections.csproj -c Release",
+      "group": "build",
       "problemMatcher": "$msCompile"
     },
     {
-      "label": "Build client translations",
-      "type": "process",
-      "command": "dotnet",
-      "args": [
-        "build",
-        "client/Client.csproj",
-        "-c",
-        "Release",
-        "-p:SptRoot=${input:sptRoot}"
-      ],
+      "label": "Build addon client",
+      "type": "shell",
+      "command": "dotnet build client/Client.csproj -c Release",
       "problemMatcher": "$msCompile"
     },
     {
       "label": "Validate collections",
-      "type": "process",
-      "command": "python",
-      "args": [
-        "tools/validate.py"
-      ],
+      "type": "shell",
+      "command": "python3 tools/validate.py",
       "problemMatcher": []
-    },
-    {
-      "label": "Package release",
-      "type": "process",
-      "command": "python",
-      "args": [
-        "tools/package.py"
-      ],
-      "problemMatcher": []
-    }
-  ],
-  "inputs": [
-    {
-      "id": "sptRoot",
-      "type": "promptString",
-      "description": "Path to SPT_Runtime"
     }
   ]
 }

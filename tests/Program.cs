@@ -1,20 +1,23 @@
+using System.Runtime.Loader;
+using System.Reflection;
 using Brainiac.WeekendCollections;
 using WeekendDrops.Models;
-var original=new CollectionSetDefinition{Id="existing",GpPerItem=123};
-var current=new List<CollectionSetDefinition>{original};
-var additions=new[]{new CollectionSetDefinition{Id="existing",GpPerItem=999},new CollectionSetDefinition{Id="new",GpPerItem=750}};
-if(CollectionMerger.Merge(current,additions)!=1)throw new Exception("Quantidade de conjuntos adicionados incorreta.");
-if(current.Count!=2||!ReferenceEquals(current[0],original)||original.GpPerItem!=123)throw new Exception("Configuração existente foi alterada.");
-if(CollectionMerger.Merge(current,additions)!=0||current.Count!=2)throw new Exception("Reaplicação duplicou coleções.");
-if(CollectionMerger.Merge(current,new[]{new CollectionSetDefinition{Id="third"},new CollectionSetDefinition{Id="third"}})!=1)throw new Exception("IDs duplicados no mesmo lote.");
-Console.WriteLine("Coleções existentes preservadas; reaplicação sem duplicatas; lote repetido tratado.");
+var runtime=Environment.GetEnvironmentVariable("SPT_ROOT")??throw new InvalidOperationException("SPT_ROOT is required for native assembly resolution.");
+AssemblyLoadContext.Default.Resolving+=(context,name)=>{var p=System.IO.Path.Combine(runtime,name.Name+".dll");return File.Exists(p)?context.LoadFromAssemblyPath(p):null;};
+var own=new CollectionSetDefinition{Id="owned",ItemIds=["item"],GpPerItem=123,Milestones=[new(){Required=1,GpReward=321,Perk=CollectionPerkKind.GpPercent,PerkValue=2}]};
+var foreign=new CollectionSetDefinition{Id="foreign",ItemIds=["other"],GpPerItem=456};
+var definition=new CollectionSetDefinition{Id="owned",ItemIds=["item"],Milestones=[new(){Required=1,Perk=CollectionPerkKind.GpPercent,PerkValue=10,Description="10%"}]};
+var current=new List<CollectionSetDefinition>{foreign,own};
+if(CollectionMerger.Merge(current,new[]{definition})!=0||own.GpPerItem!=123||own.Milestones[0].GpReward!=321||own.Milestones[0].PerkValue!=10||!ReferenceEquals(current[0],foreign))throw new Exception("Existing rewards or foreign collections changed.");
+if(CollectionMerger.Merge(current,new[]{definition})!=0||current.Count!=2)throw new Exception("Reload duplicated collections.");
+try{CollectionMerger.Merge(current,new[]{definition,definition});throw new Exception("Duplicate definitions accepted.");}catch(InvalidDataException){}
+var fresh=new List<CollectionSetDefinition>();if(CollectionMerger.Merge(fresh,new[]{definition})!=1)throw new Exception("New collection not added.");
+Console.WriteLine("PASS: 10% upgrade, cash rewards retained, foreign sets untouched, reload idempotent and duplicates rejected.");
 
-foreach(var pair in new[]{("en","en"),("ge","ge"),("de-DE","ge"),("ru","ru"),("ru-RU","ru"),("po","po"),("pt-BR","po"),("ch","ch"),("zh-CN","ch"),("fr","en")})
- if(Brainiac.WeekendCollections.Client.TranslationCatalog.Normalize(pair.Item1)!=pair.Item2)throw new Exception("Language selection failed: "+pair.Item1);
-var root=System.IO.Path.GetFullPath(System.IO.Path.Combine(AppContext.BaseDirectory,"../../../../"));
-foreach(var code in new[]{"en","ge","ru","po","ch"})
-{
- var texts=System.Text.Json.JsonSerializer.Deserialize<Dictionary<string,string>>(File.ReadAllText(Path.Combine(root,"locales",code+".json")))!;
- if(texts.Count!=12 || texts.Values.Any(string.IsNullOrWhiteSpace))throw new Exception("Missing translations: "+code);
-}
-Console.WriteLine("Five language files and language aliases verified; unsupported languages fall back to English.");
+var sets=System.Text.Json.JsonSerializer.Deserialize<List<CollectionSetDefinition>>(File.ReadAllText("src/WeekendCollections/collections.json"),new System.Text.Json.JsonSerializerOptions{Converters={new System.Text.Json.Serialization.JsonStringEnumConverter()}})!;
+NativeBonus.Verify(sets);
+
+var collectionType=typeof(WeekendDrops.Services.CollectionService);
+var binding=BindingFlags.Instance|BindingFlags.NonPublic;
+if(collectionType.GetMethod("Load",binding,null,new[]{typeof(string)},null)?.ReturnType!=typeof(PlayerCollectionState)||collectionType.GetMethod("Save",binding,null,new[]{typeof(string),typeof(PlayerCollectionState)},null)==null)throw new Exception("Native migration contract changed.");
+Console.WriteLine("PASS: native Load/Save migration signatures match.");

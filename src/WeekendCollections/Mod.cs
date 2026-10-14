@@ -30,13 +30,13 @@ public sealed class Mod(CollectionService collection,TemplateTable templates,ISp
   definitions=JsonSerializer.Deserialize<List<CollectionSetDefinition>>(File.ReadAllText(Path.Combine(root,"collections.json")),JsonOptions)
    ?? throw new InvalidDataException("collections.json está vazio.");
   if(definitions.Count!=3||definitions.Select(s=>s.Id).Distinct().Count()!=3)
-   throw new InvalidDataException("O addon precisa conter três coleções com IDs distintos.");
+   throw new InvalidDataException("Addon collection count or IDs are invalid.");
   foreach(var set in definitions)
   {
-   if(set.ItemIds.Count!=10||set.ItemIds.Distinct().Count()!=10||set.Milestones.Any(m=>m.Required<=0||m.Required>10))
-    throw new InvalidDataException("Coleção inválida: "+set.Id);
+   if(set.ItemIds.Count==0||set.ItemIds.Distinct().Count()!=set.ItemIds.Count||set.Milestones.Any(m=>m.Required<=0||m.Required>set.ItemIds.Count))
+    throw new InvalidDataException("Invalid collection: "+set.Id);
    if(set.ItemIds.Any(id=>!templates.Items.ContainsKey(new MongoId(id))))
-    throw new InvalidDataException("Itens Brainiac não carregados. Confira a versão do mod principal.");
+    throw new InvalidDataException("Required item mod is missing or incompatible.");
   }
   active=this;
   var harmony=new Harmony("project.brainiac.weekendcollections");
@@ -50,6 +50,6 @@ public sealed class Mod(CollectionService collection,TemplateTable templates,ISp
  {
   var config=(CollectionConfig)ConfigField.GetValue(service)!;
   int count=CollectionMerger.Merge(config.Sets,definitions);
-  logger.Info($"[Brainiac Weekend] {count} coleções adicionadas; conjuntos existentes e arquivo do Weekend preservados.");
+  logger.Info($"[Brainiac Weekend] {count} collections added; owned completion bonuses set to 10%. Weekend configuration stays on disk.");
  }
 }

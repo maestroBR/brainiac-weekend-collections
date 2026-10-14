@@ -1,28 +1,15 @@
-"""Gera os ZIPs de instalação; não copia arquivos para o jogo."""
 from pathlib import Path
-from zipfile import ZIP_DEFLATED, ZipFile
-import hashlib
-import json
-from validate import ROOT, validate
-
+from zipfile import ZipFile,ZIP_DEFLATED
+import hashlib,json
+from validate import ROOT,validate
 validate()
-dist = ROOT / 'dist'
-dist.mkdir(exist_ok=True)
-addon_dll = ROOT / 'src/WeekendCollections/bin/Release/net10.0/Brainiac.WeekendCollections.dll'
-client_dll = ROOT / 'client/bin/Release/netstandard2.1/Brainiac.WeekendCollections.Client.dll'
-assert addon_dll.is_file() and client_dll.is_file(), 'Compile o addon primeiro.'
-addon_zip = dist / 'Brainiac-Weekend-Collections-1.1.0.zip'
-with ZipFile(addon_zip, 'w', ZIP_DEFLATED) as archive:
-    base = 'SPT_Runtime/user/mods/Brainiac-WeekendCollections/'
-    archive.write(addon_dll, base + addon_dll.name)
-    archive.write(ROOT / 'src/WeekendCollections/collections.json', base + 'collections.json')
-    archive.write(ROOT / 'README.md', 'README.md')
-    archive.write(ROOT / 'LICENSE', 'LICENSE.txt')
-    client_base = 'BepInEx/plugins/Brainiac-WeekendCollections/'
-    archive.write(client_dll, client_base + client_dll.name)
-    for locale in (ROOT / 'locales').glob('*.json'):
-        archive.write(locale, client_base + 'locales/' + locale.name)
-manifest = {file.name: hashlib.sha256(file.read_bytes()).hexdigest() for file in [addon_zip]}
-(dist / 'checksums.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
-for file in manifest:
-    print(dist / file)
+dist=ROOT/'dist';dist.mkdir(exist_ok=True)
+file=dist/'Brainiac-Weekend-Collections-1.2.0.zip'
+with ZipFile(file,'w',ZIP_DEFLATED)as z:
+ for p in [ROOT/'src/WeekendCollections/bin/Release/net10.0/Brainiac.WeekendCollections.dll',ROOT/'src/WeekendCollections/collections.json']:
+  z.write(p,'SPT_Runtime/user/mods/Brainiac-WeekendCollections/'+p.name)
+ p=ROOT/'client/bin/Release/netstandard2.1/Brainiac.WeekendCollections.Client.dll';z.write(p,'BepInEx/plugins/Brainiac-WeekendCollections/'+p.name)
+ for p in (ROOT/'locales').glob('*.json'):z.write(p,'BepInEx/plugins/Brainiac-WeekendCollections/locales/'+p.name)
+ for name in ['README.md','LICENSE','CHANGELOG.md']:z.write(ROOT/name,name)
+(dist/'checksums.json').write_text(json.dumps({file.name:hashlib.sha256(file.read_bytes()).hexdigest()},indent=2)+'\n')
+print(file)

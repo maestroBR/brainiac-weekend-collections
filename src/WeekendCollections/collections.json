@@ -28,8 +28,8 @@
         "required": 10,
         "gpReward": 9750,
         "perk": "GpPercent",
-        "perkValue": 2,
-        "description": "Permanent +2% GP bonus on all rewards."
+        "perkValue": 10,
+        "description": "Permanent +10% GP bonus on Weekend rewards."
       }
     ]
   },
@@ -62,8 +62,8 @@
         "required": 10,
         "gpReward": 9750,
         "perk": "GpPercent",
-        "perkValue": 2,
-        "description": "Permanent +2% GP bonus on all rewards."
+        "perkValue": 10,
+        "description": "Permanent +10% GP bonus on Weekend rewards."
       }
     ]
   },
@@ -96,8 +96,8 @@
         "required": 10,
         "gpReward": 9750,
         "perk": "GpPercent",
-        "perkValue": 2,
-        "description": "Permanent +2% GP bonus on all rewards."
+        "perkValue": 10,
+        "description": "Permanent +10% GP bonus on Weekend rewards."
       }
     ]
   }
