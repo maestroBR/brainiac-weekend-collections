@@ -1,0 +1,14 @@
+{
+  "collection.set_brainiac_ph_exotic.name": "忘れられた技術",
+  "collection.set_brainiac_ph_exotic.desc": "タルコフに残された希少な電子機器を10点集める。",
+  "collection.set_brainiac_ph_exotic.milestone.5": "5点を収集。",
+  "collection.set_brainiac_ph_exotic.milestone.10": "すべての報酬で獲得するGPが恒久的に10%増加。",
+  "collection.set_brainiac_ph_military.name": "ゼロ分隊の遺物",
+  "collection.set_brainiac_ph_military.desc": "歴史ある野戦の遺物を10点集める。",
+  "collection.set_brainiac_ph_military.milestone.5": "5点を収集。",
+  "collection.set_brainiac_ph_military.milestone.10": "すべての報酬で獲得するGPが恒久的に10%増加。",
+  "collection.set_brainiac_ph_brainiac.name": "研究者の資料庫",
+  "collection.set_brainiac_ph_brainiac.desc": "研究機器や工房の道具を10点集める。",
+  "collection.set_brainiac_ph_brainiac.milestone.5": "5点を収集。",
+  "collection.set_brainiac_ph_brainiac.milestone.10": "すべての報酬で獲得するGPが恒久的に10%増加。"
+}

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.1 — 2026-10-16
+
+- Added collection names, descriptions and milestones for all 17 Weekend Drops Continued language codes.
+- Added Japanese, Korean, French, Spanish, Latin American Spanish, Polish, Czech, Italian, Hungarian, Romanian, Slovak and Turkish.
+- Recognize native game codes and common regional/ISO aliases, with English fallback.
+- Retain the same three collections, item IDs, saved progress and permanent +10% GP bonus per set.
+
 ## 1.2.0
 
 - Completion bonuses increased from 2% to 10% per collection.

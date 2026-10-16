@@ -1,0 +1,14 @@
+{
+  "collection.set_brainiac_ph_exotic.name": "TECNOLOGIA DIMENTICATA",
+  "collection.set_brainiac_ph_exotic.desc": "Raccogli dieci rari dispositivi elettronici conservati a Tarkov.",
+  "collection.set_brainiac_ph_exotic.milestone.5": "Cinque oggetti conservati.",
+  "collection.set_brainiac_ph_exotic.milestone.10": "Bonus permanente del +10% ai GP di tutte le ricompense.",
+  "collection.set_brainiac_ph_military.name": "RELIQUIE DELLA SQUADRA ZERO",
+  "collection.set_brainiac_ph_military.desc": "Raccogli dieci cimeli storici da campo.",
+  "collection.set_brainiac_ph_military.milestone.5": "Cinque oggetti conservati.",
+  "collection.set_brainiac_ph_military.milestone.10": "Bonus permanente del +10% ai GP di tutte le ricompense.",
+  "collection.set_brainiac_ph_brainiac.name": "ARCHIVIO DEI RICERCATORI",
+  "collection.set_brainiac_ph_brainiac.desc": "Raccogli dieci strumenti di ricerca e oggetti da officina.",
+  "collection.set_brainiac_ph_brainiac.milestone.5": "Cinque oggetti conservati.",
+  "collection.set_brainiac_ph_brainiac.milestone.10": "Bonus permanente del +10% ai GP di tutte le ricompense."
+}

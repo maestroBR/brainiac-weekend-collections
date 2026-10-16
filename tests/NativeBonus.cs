@@ -13,6 +13,8 @@ public static class NativeBonus
    var flags=BindingFlags.Instance|BindingFlags.NonPublic;
    typeof(CollectionService).GetField("_config",flags)!.SetValue(service,new CollectionConfig{Enabled=true,WipeWithProfile=false,Sets=definitions});
    typeof(CollectionService).GetField("_fileLock",flags)!.SetValue(service,new object());
+   // Uninitialized test instances must also provide the operation lock added in Continued 1.0.8.
+   typeof(CollectionService).GetField("_operationLock",flags)?.SetValue(service,new object());
    typeof(CollectionService).GetField("_dataDir",flags)!.SetValue(service,path);
    for(int count=0;count<=definitions.Count;count++){
     var state=new PlayerCollectionState{Donated=definitions.Take(count).SelectMany(s=>s.ItemIds).ToList()};

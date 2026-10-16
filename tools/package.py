@@ -4,7 +4,7 @@ import hashlib,json
 from validate import ROOT,validate
 validate()
 dist=ROOT/'dist';dist.mkdir(exist_ok=True)
-file=dist/'Brainiac-Weekend-Collections-1.2.0.zip'
+file=dist/'Brainiac-Weekend-Collections-1.2.1.zip'
 with ZipFile(file,'w',ZIP_DEFLATED)as z:
  for p in [ROOT/'src/WeekendCollections/bin/Release/net10.0/Brainiac.WeekendCollections.dll',ROOT/'src/WeekendCollections/collections.json']:
   z.write(p,'SPT_Runtime/user/mods/Brainiac-WeekendCollections/'+p.name)

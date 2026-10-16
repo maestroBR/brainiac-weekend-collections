@@ -5,7 +5,7 @@ Adds 3 collections with 30 items to WeekendDrops. Completing each collection giv
 ## Requirements
 
 - SPT 4.1.6
-- WeekendDrops 1.0.7
+- Weekend Drops Continued 1.0.8 (also supports WeekendDrops 1.0.7)
 - Brainiac Collectibles 1.x (1.2.0 or newer)
 
 ## Installation
@@ -17,7 +17,7 @@ SPT_Runtime/user/mods/Brainiac-WeekendCollections/
 BepInEx/plugins/Brainiac-WeekendCollections/
 ```
 
-Every player needs the client plugin for translated collection text. Restart the server and game. English, German, Russian, Brazilian Portuguese and Simplified Chinese are included.
+Every player needs the client plugin for translated collection text. Restart the server and game. All 17 Weekend language codes are included: English, German, Russian, Brazilian Portuguese, Simplified Chinese, French, Spanish, Latin American Spanish, Japanese, Korean, Polish, Czech, Italian, Hungarian, Romanian, Slovak and Turkish. Collection text follows each player’s selected Weekend language. Unknown language codes fall back to English.
 
 ## Collections
 

@@ -1,6 +1,6 @@
 # Build
 
-Use .NET SDK 10 and a local SPT 4.1.6 installation with WeekendDrops 1.0.7. Set `SPT_ROOT` to its `SPT_Runtime` directory; game references and the item mods are not distributed here. A gitignored `Directory.Build.local.props` can set `SptRoot` instead.
+Use .NET SDK 10 and a local SPT 4.1.6 installation with Weekend Drops Continued 1.0.8 (or compatible WeekendDrops 1.0.7). Set `SPT_ROOT` to its `SPT_Runtime` directory; game references and the item mods are not distributed here. A gitignored `Directory.Build.local.props` can set `SptRoot` instead.
 
 ```sh
 dotnet build src/WeekendCollections/WeekendCollections.csproj -c Release

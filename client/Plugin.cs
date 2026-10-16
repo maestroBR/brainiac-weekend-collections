@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace Brainiac.WeekendCollections.Client
 {
- [BepInPlugin("project.brainiac.weekendcollections.client", "Brainiac Weekend Collections Languages", "1.2.0")]
+ [BepInPlugin("project.brainiac.weekendcollections.client", "Brainiac Weekend Collections Languages", "1.2.1")]
  [BepInDependency("com.20fpsguy.WeekendDrops")]
  public sealed class Plugin : BaseUnityPlugin
  {
@@ -20,18 +20,18 @@ namespace Brainiac.WeekendCollections.Client
    try
    {
     var folder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-    foreach(var code in new[]{"en","ge","ru","po","ch"})
+    foreach(var code in TranslationCatalog.Supported)
      translations[code] = JsonConvert.DeserializeObject<Dictionary<string,string>>(File.ReadAllText(Path.Combine(folder,"locales",code+".json")));
     var loc = AccessTools.TypeByName("WeekendDropsUI.Services.Loc");
     language = AccessTools.Property(loc,"Language");
     resolve = AccessTools.Method(loc,"T",new[]{typeof(string)});
     var lookup = AccessTools.Method(loc,"Or",new[]{typeof(string),typeof(string)});
     var draw = AccessTools.DeclaredMethod(AccessTools.TypeByName("WeekendDropsUI.UI.ChallengePanel"),"DrawCollectionSet");
-    if(language==null || resolve==null || lookup==null || draw==null) throw new MissingMemberException("WeekendDrops 1.0.7 localization API");
+    if(language==null || resolve==null || lookup==null || draw==null) throw new MissingMemberException("Weekend Drops localization API");
     harmony = new Harmony("project.brainiac.weekendcollections.client");
     harmony.Patch(lookup,postfix:new HarmonyMethod(typeof(Plugin),nameof(Localize)));
     harmony.Patch(draw,prefix:new HarmonyMethod(typeof(Plugin),nameof(TranslateSet)){priority=Priority.First});
-    Logger.LogInfo("Brainiac collection translations loaded: en, ge, ru, po, ch.");
+    Logger.LogInfo("Brainiac collection translations loaded for all 17 supported Weekend language codes.");
    }
    catch(Exception error) { harmony?.UnpatchSelf(); Logger.LogError(error); }
   }

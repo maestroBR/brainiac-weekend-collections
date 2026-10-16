@@ -1,0 +1,14 @@
+{
+  "collection.set_brainiac_ph_exotic.name": "ZAPOMNIANA TECHNOLOGIA",
+  "collection.set_brainiac_ph_exotic.desc": "Zbierz dziesięć rzadkich urządzeń elektronicznych zachowanych w Tarkowie.",
+  "collection.set_brainiac_ph_exotic.milestone.5": "Zebrano pięć przedmiotów.",
+  "collection.set_brainiac_ph_exotic.milestone.10": "Stała premia +10% GP ze wszystkich nagród.",
+  "collection.set_brainiac_ph_military.name": "RELIKWIE ODDZIAŁU ZERO",
+  "collection.set_brainiac_ph_military.desc": "Zbierz dziesięć historycznych pamiątek z pola walki.",
+  "collection.set_brainiac_ph_military.milestone.5": "Zebrano pięć przedmiotów.",
+  "collection.set_brainiac_ph_military.milestone.10": "Stała premia +10% GP ze wszystkich nagród.",
+  "collection.set_brainiac_ph_brainiac.name": "ARCHIWUM BADACZY",
+  "collection.set_brainiac_ph_brainiac.desc": "Zbierz dziesięć przyrządów badawczych i przedmiotów warsztatowych.",
+  "collection.set_brainiac_ph_brainiac.milestone.5": "Zebrano pięć przedmiotów.",
+  "collection.set_brainiac_ph_brainiac.milestone.10": "Stała premia +10% GP ze wszystkich nagród."
+}

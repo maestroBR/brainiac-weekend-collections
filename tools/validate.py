@@ -14,9 +14,9 @@ def validate():
   assert all(0<m['required']<=len(s['itemIds']) and m['gpReward']>=0 for m in s['milestones'])
   expected.update({'collection.'+s['id']+'.name','collection.'+s['id']+'.desc'})
   expected.update('collection.'+s['id']+'.milestone.'+str(m['required'])for m in s['milestones'])
- for code in ['en','ge','ru','po','ch']:
+ for code in ['en','ge','ru','po','ch','fr','es','es-mx','jp','kr','pl','cz','it','hu','ro','sk','tu']:
   locale=json.loads((ROOT/'locales'/f'{code}.json').read_text())
   assert set(locale)==expected and all(isinstance(v,str)and v.strip()for v in locale.values())
-  assert all('10%' in locale['collection.'+s['id']+'.milestone.'+str(len(s['itemIds']))] for s in sets)
- print(f"Validated {len(sets)} collections, {len(ids)} items, 10% bonuses and five languages.")
+  assert all(re.search(r'(10\s*%|%\s*10)', locale['collection.'+s['id']+'.milestone.'+str(len(s['itemIds']))]) for s in sets)
+ print(f"Validated {len(sets)} collections, {len(ids)} items, 10% bonuses and 17 languages.")
 if __name__=='__main__':validate()

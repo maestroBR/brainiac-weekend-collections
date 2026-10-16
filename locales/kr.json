@@ -1,0 +1,14 @@
+{
+  "collection.set_brainiac_ph_exotic.name": "잊힌 기술",
+  "collection.set_brainiac_ph_exotic.desc": "타르코프에 남아 있는 희귀 전자 기기 10개를 수집하세요.",
+  "collection.set_brainiac_ph_exotic.milestone.5": "물품 5개 수집 완료.",
+  "collection.set_brainiac_ph_exotic.milestone.10": "모든 보상에서 획득하는 GP가 영구적으로 10% 증가합니다.",
+  "collection.set_brainiac_ph_military.name": "제로 분대의 유물",
+  "collection.set_brainiac_ph_military.desc": "역사적인 야전 유물 10개를 수집하세요.",
+  "collection.set_brainiac_ph_military.milestone.5": "물품 5개 수집 완료.",
+  "collection.set_brainiac_ph_military.milestone.10": "모든 보상에서 획득하는 GP가 영구적으로 10% 증가합니다.",
+  "collection.set_brainiac_ph_brainiac.name": "연구자들의 기록 보관소",
+  "collection.set_brainiac_ph_brainiac.desc": "연구 장비와 작업실 물품 10개를 수집하세요.",
+  "collection.set_brainiac_ph_brainiac.milestone.5": "물품 5개 수집 완료.",
+  "collection.set_brainiac_ph_brainiac.milestone.10": "모든 보상에서 획득하는 GP가 영구적으로 10% 증가합니다."
+}

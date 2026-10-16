@@ -21,3 +21,11 @@ var collectionType=typeof(WeekendDrops.Services.CollectionService);
 var binding=BindingFlags.Instance|BindingFlags.NonPublic;
 if(collectionType.GetMethod("Load",binding,null,new[]{typeof(string)},null)?.ReturnType!=typeof(PlayerCollectionState)||collectionType.GetMethod("Save",binding,null,new[]{typeof(string),typeof(PlayerCollectionState)},null)==null)throw new Exception("Native migration contract changed.");
 Console.WriteLine("PASS: native Load/Save migration signatures match.");
+
+var languages=Brainiac.WeekendCollections.Client.TranslationCatalog.Supported;
+if(languages.Length!=17||languages.Distinct().Count()!=17)throw new Exception("Expected 17 distinct Weekend languages.");
+foreach(var code in languages)if(Brainiac.WeekendCollections.Client.TranslationCatalog.Normalize(code)!=code)throw new Exception("Native code unsupported: "+code);
+var aliases=new Dictionary<string,string>{{"de-DE","ge"},{"pt_BR","po"},{"zh-CN","ch"},{"ja-JP","jp"},{"ko-KR","kr"},{"cs-CZ","cz"},{"tr-TR","tu"},{"ES_mx","es-mx"},{"es-ES","es"},{"fr-CA","fr"},{" EN ","en"},{"unknown","en"},{"","en"}};
+foreach(var pair in aliases)if(Brainiac.WeekendCollections.Client.TranslationCatalog.Normalize(pair.Key)!=pair.Value)throw new Exception("Wrong language alias: "+pair.Key);
+if(Brainiac.WeekendCollections.Client.TranslationCatalog.Normalize(null!)!="en")throw new Exception("Missing language fallback");
+Console.WriteLine("PASS: all 17 game codes, 13 aliases/invalid codes and null fallback; existing native bonus checks retained.");
